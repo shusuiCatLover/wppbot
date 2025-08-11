@@ -51,7 +51,7 @@ wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs
 
 - [`bot.js`](bot.js): Main bot logic and event handlers
 - [`package.json`](package.json): Project metadata and dependencies
-- `.env`: Environment variables (not committed to git)
+- `.env`: Environment variables
 
 ## Extending the Bot
 
