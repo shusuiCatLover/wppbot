@@ -1,12 +1,12 @@
 # wppbot
 
-wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs.dev/) library. It allows you to automate interactions on WhatsApp, such as responding to messages and handling events, by running a Node.js script that connects to your WhatsApp account via the web client.
+wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs.dev/) library. It automates WhatsApp interactions by connecting to your account via the web client and running a Node.js script.
 
 ## Features
 
 - Connects to WhatsApp Web using QR code authentication
-- Logs all incoming messages to the console
-- Automatically replies messages
+- Sends a welcome/help message and a registration form link automatically to a configured number when the bot starts
+- Logs all incoming messages to the console for monitoring
 - Easily extendable for custom commands and automations
 
 ## Getting Started
@@ -20,13 +20,18 @@ wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs
 
 1. Clone this repository:
     ```sh
-    git clone https://github.com/username/wppbot.git
+    git clone https://github.com/yourusername/wppbot.git
     cd wppbot
     ```
 
 2. Install dependencies:
     ```sh
     npm install
+    ```
+
+3. Create a `.env` file in the project root and add your WhatsApp phone number:
+    ```
+    PHONENUMBER=1234567890123
     ```
 
 ### Usage
@@ -36,22 +41,21 @@ wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs
     npm start
     ```
 
-2. When prompted, scan the QR code displayed in your terminal using the WhatsApp app on your phone (Menu > Linked Devices > Link a Device).
+2. Scan the QR code displayed in your terminal using the WhatsApp app on your phone (Menu > Linked Devices > Link a Device).
 
-3. The bot will log incoming messages and automatically reply "ola" to any message that says "oi".
+3. When the bot is ready, it will automatically send a help message and a registration form link to the configured phone number.
 
-### Example
-
-When someone sends "oi" to your WhatsApp, the bot will reply with "ola".
+4. All incoming messages will be logged to the console.
 
 ## Project Structure
 
 - [`bot.js`](bot.js): Main bot logic and event handlers
 - [`package.json`](package.json): Project metadata and dependencies
+- `.env`: Environment variables (not committed to git)
 
 ## Extending the Bot
 
-You can add more commands or automate other tasks by editing [`bot.js`](bot.js) and adding new event handlers or message checks.
+You can add more commands or automate other tasks by editing [`bot.js`](bot.js) and adding new event handlers or message checks. For example, you can uncomment and modify the provided code to reply to specific messages.
 
 ## License
 
