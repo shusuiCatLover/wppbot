@@ -29,10 +29,11 @@ client.on('message_create', message => {
     console.log(`nova mensagem do ${message.from}: ${message.body}`);
 });
 
-// client.on('message_create', message => {
-//     if (message.body === 'oi') {
-//         message.reply('ola');
-//     }
-// });
+//test message
+client.on('message_create', message => {
+    if (['ping', 'Ping', 'PING'].includes(message.body)) {
+        message.reply('pong!');
+    }
+});
 
 client.initialize();

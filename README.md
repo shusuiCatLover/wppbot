@@ -35,7 +35,7 @@ wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs
     ```
 
 ### Usage
-
+ 
 1. Start the bot:
     ```sh
     npm start
