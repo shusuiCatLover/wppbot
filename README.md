@@ -5,7 +5,9 @@ wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs
 ## Features
 
 - Connects to WhatsApp Web using QR code authentication
-- Sends a welcome/help message and a registration form link automatically to a configured number when the bot starts
+- **Saves authentication sessions locally** so you don't need to scan the QR code every time you start the bot
+- Sends a welcome/help message to a configured number when the bot starts
+- Sends the registration form link only when requested by the user
 - Logs all incoming messages to the console for monitoring
 - Easily extendable for custom commands and automations
 
@@ -41,9 +43,11 @@ wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs
     npm start
     ```
 
-2. Scan the QR code displayed in your terminal using the WhatsApp app on your phone (Menu > Linked Devices > Link a Device).
+2. Scan the QR code displayed in your terminal using the WhatsApp app on your phone (Menu > Linked Devices > Link a Device).  
+   **Note:** After the first successful authentication, your session will be saved locally in the `.wwebjs_auth/` directory. On subsequent runs, you won't need to scan the QR code again.
 
-3. When the bot is ready, it will automatically send a help message and a registration form link to the configured phone number.
+3. When the bot is ready, it will automatically send a help message to the configured phone number.  
+   The help message will instruct the user to send `form` if they want to receive the registration form link.
 
 4. All incoming messages will be logged to the console.
 
@@ -52,10 +56,11 @@ wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs
 - [`bot.js`](bot.js): Main bot logic and event handlers
 - [`package.json`](package.json): Project metadata and dependencies
 - `.env`: Environment variables
+- `.wwebjs_auth/`: Directory where WhatsApp authentication sessions are stored (ignored by git)
 
 ## Extending the Bot and TODO LIST
 
-You can add more commands or automate other tasks by editing [`bot.js`](bot.js) and adding new event handlers or message checks. For example, you can uncomment and modify the provided code to reply to specific messages.
+You can add more commands or automate other tasks by editing [`bot.js`](bot.js) and adding new event handlers or message checks.
 
 to "finish" this project we still need to...
 - define a functional message flow 
