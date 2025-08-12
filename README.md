@@ -53,9 +53,14 @@ wppbot is a simple WhatsApp bot built using the [whatsapp-web.js](https://wwebjs
 - [`package.json`](package.json): Project metadata and dependencies
 - `.env`: Environment variables (not committed to git)
 
-## Extending the Bot
+## Extending the Bot and TODO LIST
 
 You can add more commands or automate other tasks by editing [`bot.js`](bot.js) and adding new event handlers or message checks. For example, you can uncomment and modify the provided code to reply to specific messages.
+
+to "finish" this project we still need to...
+- define a functional message flow 
+- define a business account
+- look for wpp helping options regarding google form features improving convenience for the client
 
 ## License
 
